@@ -1,4 +1,4 @@
-import React from "react";
+import React , {ReactNode} from "react";
 
 interface Question {
   id: number;
@@ -7,12 +7,12 @@ interface Question {
   correctAnswer: string;
 }
 
-interface DataProps {
+export interface DataProps {
   totalQuestions: number;
   questions: Question[];
 }
-
-const Data: React.FC = () => {
+type DataChildrenFunction = (data: DataProps) => ReactNode;
+const Data: React.FC<{ children: DataChildrenFunction }> = ({ children }) => {
   const data: DataProps = {
     totalQuestions: 5,
     questions: [
@@ -51,10 +51,11 @@ const Data: React.FC = () => {
 
   return (
     <div>
-
+      {children(data)}
     </div>
   );
 };
 
 export default Data;
+
 
