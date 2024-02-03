@@ -1,19 +1,23 @@
+// CustomRadio.tsx
 import React from "react";
-import {RadioGroup, Radio, useRadio, VisuallyHidden, RadioProps, cn} from "@nextui-org/react";
+import { useRadio, VisuallyHidden, cn } from "@nextui-org/react";
 
-const CustomRadio = (props: RadioProps) => {
-    const {
-        Component,
-        children,
-        isSelected,
-        description,
-        getBaseProps,
-        getWrapperProps,
-        getInputProps,
-        getLabelProps,
-        getLabelWrapperProps,
-        getControlProps,
-    } = useRadio(props);
+interface CustomRadioProps {
+    value: string;
+    checked: boolean;
+    onChange: () => void;
+    children: React.ReactNode;
+    description?: string;
+}
+
+const CustomRadio: React.FC<CustomRadioProps> = ({
+                                                     value,
+                                                     checked,
+                                                     onChange,
+                                                     children,
+                                                     description,
+                                                 }) => {
+    const { Component, getBaseProps, getWrapperProps, getInputProps, getLabelProps, getLabelWrapperProps, getControlProps } = useRadio({ value, checked, onChange });
 
     return (
         <Component
