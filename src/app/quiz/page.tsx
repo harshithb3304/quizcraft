@@ -273,6 +273,11 @@ const Quiz = () => {
                 Restart Test
               </Button>
             </Link>
+            <Link href={"/"}>
+              <Button className="p-4 " color="secondary">
+                Home
+              </Button>
+            </Link>
           </div>
         </div>
       )}
