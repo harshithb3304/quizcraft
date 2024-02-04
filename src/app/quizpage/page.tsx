@@ -8,6 +8,9 @@ const QuizPage = () => {
       <h1 className="flex items-center justify-center p-4 text-base md:text-lg lg:text-xl xl:text-2xl mt-20 mb-8">
           Hey I am trying to build a Quiz app so click the below button to start the Quiz
       </h1>
+        <h1 className="flex items-center justify-center p-4 text-2xl">
+            Instruction :  Always Click Confirm before going to the Next Question.
+        </h1>
       <div className="flex items-center justify-center">
         <Link href="/quiz">
           <Button radius="sm" size="lg" color="secondary">
